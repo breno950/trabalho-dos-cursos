@@ -6,9 +6,22 @@
   <title>Colégio Silveira da Motta • Cursos Técnicos</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const btn = document.querySelector('.btn-banner');
+    const target = document.getElementById('cursos');
+    if (btn && target) {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+    }
+  });
+</script>
+
 <body>
 
-  <!-- Header com menu simplificado -->
   <header class="header-udemy">
     <div class="container header-container">
       <div class="logo">
@@ -24,7 +37,6 @@
     </div>
   </header>
 
-  <!-- Banner grande com nova cor de fundo -->
   <section class="banner-udemy banner-destaque">
     <div class="container banner-content">
       <h2>Desenvolva suas habilidades técnicas no Colégio <br>Silveira da Motta</h2>
@@ -33,12 +45,32 @@
     </div>
   </section>
 
-  <!-- Seção de cursos recomendados ou destaque -->
+  <section class="imagens-legenda container">
+    <div class="grid-imagens">
+      <div class="item-imagem">
+        <img src="laboratorio.jpg" alt="Laboratório de informática">
+        <p>Laboratórios modernos para práticas reais</p>
+      </div>
+      <div class="item-imagem">
+        <img src="mecanicaoficina.jpg" alt="Oficina de Mecânica">
+        <p>Oficinas equipadas para o curso de Mecânica</p>
+      </div>
+      <div class="item-imagem">
+        <img src="administracaoescritorio.jpg" alt="Administração e Escritório">
+        <p>Ambiente simulado de gestão e negócios</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="texto-final-imagens">
+    <h3>Aprendizado na prática e com qualidade!</h3>
+    <p>No Colégio Silveira da Motta, nossos cursos técnicos unem teoria e prática em um ambiente moderno e colaborativo.</p>
+  </div>
+
   <section id="cursos" class="cursos-section container">
     <h3>Cursos Técnicos</h3>
     <div class="grid-cursos">
 
-      <!-- Card Desenvolvimento de Sistemas -->
       <div class="card-curso">
         <img src="imagensdev.jpg" alt="Desenvolvimento de Sistemas">
         <div class="card-body">
@@ -48,7 +80,6 @@
         </div>
       </div>
 
-      <!-- Card Mecânica -->
       <div class="card-curso">
         <img src="imagensmecanica.jpg" alt="Mecânica">
         <div class="card-body">
@@ -58,7 +89,6 @@
         </div>
       </div>
 
-      <!-- Card Administração -->
       <div class="card-curso">
         <img src="imagensadministracao.jpg" alt="Administração">
         <div class="card-body">
@@ -71,11 +101,9 @@
     </div>
   </section>
 
-  <!-- Footer simples mas informativo estilo Udemy -->
   <footer class="footer-udemy">
     <div class="container footer-container">
       <div class="footer-links">
-        <!-- removei os links extra -->
         <a href="#">Início</a>
       </div>
       <p>© 2025 Colégio Silveira da Motta. Todos os direitos reservados.</p>
