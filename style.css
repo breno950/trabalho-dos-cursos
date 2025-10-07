@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
   margin: 0;
   padding: 0;
@@ -15,21 +15,16 @@ a {
   color: inherit;
 }
 
-/* Container para centralizar conteúdo */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Header estilo Udemy simplificado */
 .header-udemy {
-  background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 255, 0.1);
-  position: sticky;
-  top: 0;
-  z-index: 10;
+  z-index: 1000;
 }
+
 .header-container {
   display: flex;
   align-items: center;
@@ -74,58 +69,131 @@ a {
   background-color: #2563eb;
 }
 
-/* Banner */
 .banner-udemy {
   background: url('imagens/banner.jpg') center/cover no-repeat;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black; /* texto preto */
+  color: black; 
   position: relative;
   overflow: hidden;
 }
+
+.imagens-legenda {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.grid-imagens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.item-imagem img {
+  height: 300px;
+}
+
+.item-imagem img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 14px rgba(0, 0, 255, 0.2);
+}
+
+.item-imagem p {
+  margin-top: 12px;
+  font-size: 1rem;
+  color: #444;
+}
+
+
 .banner-udemy::after {
   content: "";
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.6); /* overlay claro */
+  background-color: rgba(255, 255, 255, 0.6);
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  pointer-events: none; 
+  z-index: 0;
 }
+
 .banner-content {
   position: relative;
-  text-align: center;
-  width: 100%;
-  padding: 0 20px;
+  z-index: 2;
 }
+
 .banner-content h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
-  color: #000000; /* preto */
+  color: #000000; 
 }
+
 .banner-content p {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  color: #222; /* cinza bem escuro */
-}
-.btn-banner {
-  font-size: 1.1rem;
-  background-color: #2563eb;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-.btn-banner:hover {
-  background-color: #2563eb;
+  color: #222; 
 }
 
-/* Seção cursos */
+.btn-banner {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+  background-color: #2563eb; 
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 38px;
+  border-radius: 40px; 
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 6px 14px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 3;
+  margin-top: 15px;
+}
+
+.btn-banner:hover {
+  background-color: #1e4ed8;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(37, 99, 235, 0.45);
+}
+
+.btn-banner:active {
+  transform: scale(0.97);
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.3);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-banner::after {
+  content: "↓";
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.btn-banner:hover::after {
+  transform: translateY(3px);
+}
+
+
+#cursos,
 .cursos-section {
-  padding: 40px 0;
-  background-color: #fff;
+  scroll-margin-top: 100px;
 }
 .cursos-section h3 {
   font-size: 2rem;
@@ -179,7 +247,6 @@ a {
   background-color: #2563eb;
 }
 
-/* Footer */
 .footer-udemy {
   background-color: #2563eb;
   padding: 20px 0;
@@ -200,7 +267,6 @@ a {
   font-size: 0.9rem;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .banner-content h2 {
     font-size: 2rem;
@@ -226,4 +292,71 @@ a {
   .btn-banner {
     padding: 10px 20px;
   }
+}
+
+.grid-imagens {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 40px;
+}
+
+.item-imagem img {
+  width: 100%;
+  height: 300px; 
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px rgba(0, 0, 255, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-imagem img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0, 0, 255, 0.25);
+}
+
+.item-imagem p {
+  margin-top: 14px;
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: 500;
+}
+
+
+html {
+  scroll-behavior: smooth; 
+}
+
+.btn-banner {
+  font-size: 1.1rem;
+  background-color: #2563eb;
+  color: white;
+  padding: 14px 30px;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.2s;
+  display: inline-block;
+}
+
+.btn-banner:hover {
+  background-color: #1e4ed8;
+  transform: scale(1.05);
+}
+
+.texto-final-imagens {
+  margin-top: 60px;
+  text-align: center;
+  color: #333;
+  padding-bottom: 80px;
+}
+
+.texto-final-imagens h3 {
+  font-size: 1.8rem;
+  color: #2563eb;
+  margin-bottom: 12px;
+}
+
+.texto-final-imagens p {
+  font-size: 1.1rem;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
 }
